@@ -1,0 +1,62 @@
+    <title>Calculadora</title>
+    <h1>Calculadora</h1>
+
+    <input type="number" id="a">
+    <input type="number" id="b">
+
+
+    <br>
+    <input type="button" value="+" onclick="calc_adicao()">
+    <input type="button" value="-" onclick="calc_subtracao()">
+    <input type="button" value="x" onclick="calc_multi()">
+    <input type="button" value="/" onclick="calc_divisao()">
+    <input type="button" value="Limpar" onclick="limpar()">
+    <p id="resultado"></p>
+
+
+
+    <script>
+        resultado.innerText = "Aguardando valores..."
+        function calc_adicao() {
+            aguardo = false
+            var a = Number(document.getElementById('a').value);
+            var b = Number(document.getElementById('b').value);
+
+            var x = (a + b);
+            
+            resultado.innerText = a+" + "+b+" é igual a: "+x;
+        }
+        function calc_subtracao() {
+            aguardo = false
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+
+            var x = (a - b);
+        
+            resultado.innerText = a+" + "+b+" é igual a: "+x;
+        }      
+        function calc_multi() {
+            aguardo = false
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+
+            var x = (a * b);
+        
+            resultado.innerText = a+" + "+b+" é igual a: "+x;
+        }
+        function calc_divisao() {
+            aguardo = false
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+
+            var x = (a / b);
+        
+            resultado.innerText = a+" + "+b+" é igual a: "+x;
+        }
+
+        function limpar() {
+            document.getElementById('a').value = ""
+            document.getElementById('b').value = ""
+            resultado.innerText = ""
+        }
+    </script>
