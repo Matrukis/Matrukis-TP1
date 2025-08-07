@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+
+    <input type="number" id="a"> <input type="number" id="b"> <br>
+    <input type="button" value="+" onclick="adicao()"> 
+    <input type="button" value="-" onclick="subtracao()"> 
+    <input type="button" value="x" onclick="multiplicacao()"> 
+    <input type="button" value="/" onclick="divisao()"> 
+    <input type="button" value="Limpar" onclick="limpar()">
+
+    <p id="resultado">Aguardando valores...</p>
+    
+    <h3>Histórico</h3>
+    <ul id="historico"></ul>
+
+    <script>
+        resultado.innerText = "Aguardando valores...";
+        
+        function adicionarHistorico(operacao, resultado) {
+            let historico = document.getElementById("historico");
+            let itemHistorico = document.createElement("li"); 
+            itemHistorico.innerText = operacao + " = " + resultado;
+            historico.append(itemHistorico); 
+        }
+
+        function adicao() {
+            var a = Number(document.getElementById('a').value);
+            var b = Number(document.getElementById('b').value);
+            var x = a + b;
+            
+            resultado.innerText = x;
+            document.getElementById('a').value = x;
+            document.getElementById('b').value = '';
+
+            adicionarHistorico(a + " + " + b, x);
+        }
+        function subtracao() {
+            var a = Number(document.getElementById('a').value);
+            var b = Number(document.getElementById('b').value);
+            var x = a - b;
+            
+            resultado.innerText = x;
+            document.getElementById('a').value = x;
+            document.getElementById('b').value = '';
+
+            adicionarHistorico(a + " - " + b, x);
+        }
+
+        function multiplicacao() {
+            var a = Number(document.getElementById('a').value);
+            var b = Number(document.getElementById('b').value);
+            var x = a * b;
+            
+            resultado.innerText = x;
+            document.getElementById('a').value = x;
+            document.getElementById('b').value = '';
+
+            adicionarHistorico(a + " x " + b, x);
+        }
+
+        function divisao() {
+            var a = Number(document.getElementById('a').value);
+            var b = Number(document.getElementById('b').value);
+            var x = a / b;
+            
+            resultado.innerText = x;
+            document.getElementById('a').value = x;
+            document.getElementById('b').value = '';
+
+            adicionarHistorico(a + " / " + b, x);
+        }
+
+        function limpar() {
+            document.getElementById('a').value = "";
+            document.getElementById('b').value = "";
+            resultado.innerText = "";
+            
+        }
+    </script>
+</body>
+</html>
