@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+
+<h2>Produtos</h2>
+<ul>
+<% produtos.forEach(p => { %>
+<li><strong><%= p.nome %></strong> — <%= p.preco %></li>
+<% }) %>
+</ul>
+
+
+<p><a href="/">Voltar</a></p>
+
+
+<%- include('partials/footer') %>
